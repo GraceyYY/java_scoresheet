@@ -9,19 +9,19 @@ public class Score {
 
     public Score() {
         this.scoresBySubjects = new TreeMap<>();
-        this.scoresBySubjects.put("数学", -1);
-        this.scoresBySubjects.put("语文", -1);
-        this.scoresBySubjects.put("英语", -1);
-        this.scoresBySubjects.put("编程", -1);
+        this.scoresBySubjects.put("数学", 0);
+        this.scoresBySubjects.put("语文", 0);
+        this.scoresBySubjects.put("英语", 0);
+        this.scoresBySubjects.put("编程", 0);
         this.scoresBySubjects.comparator();
     }
 
     public int getTotalScore() {
-        return this.scoresBySubjects.values().stream().filter(s -> s != -1).mapToInt(Integer::intValue).sum();
+        return this.scoresBySubjects.values().stream().filter(s -> s != 0).mapToInt(Integer::intValue).sum();
     }
 
     public double getAverageScore() {
-        return this.scoresBySubjects.values().stream().filter(s -> s != -1).collect(Collectors.averagingDouble(Integer::doubleValue));
+        return this.scoresBySubjects.values().stream().filter(s -> s != 0).collect(Collectors.averagingDouble(Integer::doubleValue));
     }
 
     public TreeMap<String, Integer> getScoresBySubjects() {
