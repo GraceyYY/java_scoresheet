@@ -12,7 +12,7 @@ public class TheClass {
     }
 
     public HashMap<String, Student> getStudents() {
-        return this.students.;
+        return this.students;
     }
 
     public boolean isStudentInClass(String id) {
