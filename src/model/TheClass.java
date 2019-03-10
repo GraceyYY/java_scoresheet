@@ -1,10 +1,13 @@
 package model;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class TheClass {
+public class TheClass implements Serializable {
+    private static final long serialVersionUID = 1l;
+
     private HashMap<String, Student> students;
 
     public TheClass(HashMap<String, Student> students) {
