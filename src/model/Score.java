@@ -23,4 +23,12 @@ public class Score {
     public double getAverageScore() {
         return this.scoresBySubjects.values().stream().filter(s -> s != -1).collect(Collectors.averagingDouble(Integer::doubleValue));
     }
+
+    public TreeMap<String, Integer> getScoresBySubjects() {
+        return this.scoresBySubjects;
+    }
+
+    public void setScoresBySubjects(String subject, int score) {
+        this.scoresBySubjects.put(subject,score);
+    }
 }
