@@ -3,6 +3,7 @@ package service;
 import model.Score;
 import model.Student;
 import model.TheClass;
+import tools.Print;
 
 import java.util.Arrays;
 import java.util.List;
@@ -39,6 +40,7 @@ public class UserInput {
             Student student = new Student(name, id, studentScore);
             klass.updateStudent(student);
         }
+        Print.addSuccessful(name);
     }
 
     public static List<String> processIdInput(TheClass klass, String input) {

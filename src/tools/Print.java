@@ -19,8 +19,8 @@ public class Print {
         System.out.println("请按正确的格式输入要打印的学生的学号（格式： 学号, 学号,...），按回车提交：");
     }
 
-    public static void addSuccessful(Student student) {
-        System.out.println("学生" + student.getName() + "的成绩被添加");
+    public static void addSuccessful(String studentName) {
+        System.out.println("学生" + studentName + "的成绩被添加");
     }
 
     public static void printScoresheet(String scoresheet) {
