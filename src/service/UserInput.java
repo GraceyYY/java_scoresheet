@@ -4,6 +4,10 @@ import model.Score;
 import model.Student;
 import model.TheClass;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class UserInput {
     public static boolean checkStuInfoFormat(String inputInfo) {
         return inputInfo.matches("^[\u4e00-\u9fa5]{2,4}，[0-9]{4}，([\u4e00-\u9fa5]{2}：[0-9]{1,2}[0]?，?)+$");
@@ -35,5 +39,9 @@ public class UserInput {
             Student student = new Student(name, id, studentScore);
             klass.updateStudent(student);
         }
+    }
+
+    public static List<String> processIdInput(TheClass klass, String input) {
+         return Arrays.stream(input.split("，")).filter(id->klass.isStudentInClass(id)).collect(Collectors.toList());
     }
 }
