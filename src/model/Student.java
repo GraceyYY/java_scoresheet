@@ -1,8 +1,11 @@
 package model;
 
+import java.io.Serializable;
 import java.util.stream.Collectors;
 
-public class Student {
+public class Student implements Serializable {
+    private static final long serialVersionUID = 1l;
+
     private String name;
     private String id;
     private Score score;

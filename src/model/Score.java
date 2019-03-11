@@ -1,10 +1,12 @@
 package model;
 
-import java.util.HashMap;
+import java.io.Serializable;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
-public class Score {
+public class Score implements Serializable {
+    private static final long serialVersionUID = 1l;
+
     private TreeMap<String, Integer> scoresBySubjects;
 
     public Score() {
@@ -29,6 +31,6 @@ public class Score {
     }
 
     public void setScoresBySubjects(String subject, int score) {
-        this.scoresBySubjects.put(subject,score);
+        this.scoresBySubjects.put(subject, score);
     }
 }
