@@ -43,6 +43,6 @@ public class Student implements Serializable {
     public String generateScoreSheet() {
         return this.name + "|"
                 + this.score.getScoresBySubjects().values().stream().map(s -> s.toString()).collect(Collectors.joining("|"))
-                + this.score.getAverageScore() + "|" + this.score.getTotalScore();
+                + "|" + this.score.getAverageScore() + "|" + this.score.getTotalScore();
     }
 }
