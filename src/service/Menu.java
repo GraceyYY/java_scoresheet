@@ -1,7 +1,9 @@
 package service;
 
+import model.TheClass;
 import tools.Print;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
@@ -20,7 +22,7 @@ public class Menu {
                     Print.showInfoFormatErrorHint();
                     input = scanner.next();
                 }
-                //TODO:process the input
+                UserInput.processInfoInput(klass,input);
                 Menu.showMenu();
                 break;
             }
@@ -31,7 +33,10 @@ public class Menu {
                     Print.showIdFormatErrorHint();
                     input = scanner.next();
                 }
-                //TODO:print the scoresheet
+                String[] subjects = {"数学","语文","英语","编程"};
+                Scoresheet scoresheet = new Scoresheet(subjects);
+                List<String> ids = UserInput.processIdInput(klass,input);
+                Print.printScoresheet(scoresheet.generateScoresheet(ids,klass));
                 Menu.showMenu();
                 break;
             }
