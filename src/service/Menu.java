@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Menu {
     public static void showMenu() {
         Document doc = new Document();
-        TheClass klass = doc.readFromFile().orElseGet(() -> new TheClass());
+        TheClass klass = doc.readFromFile().orElseGet(TheClass::new);
         Scanner scanner = new Scanner(System.in);
         System.out.println("1. 添加学生\n" +
                 "2. 生成成绩单\n" +
