@@ -1,5 +1,7 @@
 package service;
 
+import tools.Print;
+
 import java.util.Scanner;
 
 public class Menu {
@@ -12,10 +14,10 @@ public class Menu {
         int menu = scanner.nextInt();
         switch (menu) {
             case 1: {
-                System.out.println("请输入学生信息（格式：姓名, 学号, 学科: 成绩, ...），按回车提交：");
+                Print.showInfoFormat();
                 String input = scanner.next();
                 while (!UserInput.checkStuInfoFormat(input)) {
-                    System.out.println("请按正确的格式输入（格式：姓名, 学号, 学科: 成绩, ...）：");
+                    Print.showInfoFormatErrorHint();
                     input = scanner.next();
                 }
                 //TODO:process the input
@@ -23,10 +25,10 @@ public class Menu {
                 break;
             }
             case 2: {
-                System.out.println("请输入要打印的学生的学号（格式： 学号, 学号,...），按回车提交：");
+                Print.showIdFormat();
                 String input = scanner.next();
                 while (!UserInput.checkStuIdFormat(input)) {
-                    System.out.println("请按正确的格式输入要打印的学生的学号（格式： 学号, 学号,...），按回车提交：");
+                    Print.showIdFormatErrorHint();
                     input = scanner.next();
                 }
                 //TODO:print the scoresheet
