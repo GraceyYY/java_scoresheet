@@ -10,7 +10,7 @@ public class TheClass implements Serializable {
 
     private HashMap<String, Student> students;
 
-    public TheClass(HashMap<String, Student> students) {
+    public TheClass() {
         this.students = new HashMap<>();
     }
 
